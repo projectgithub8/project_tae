@@ -1,7 +1,10 @@
 <?php
 session_start();
 if(!isset($_SESSION['User_username'])){
-	header("Location: home.html");
+	echo "<script>
+			alert('กรุณาเข้าสู่ระบบ')
+			window.location='home.html';
+			</script>";
 }
 ?>
 <html>

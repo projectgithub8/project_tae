@@ -18,7 +18,7 @@ $result=mysqli_query($conn,$sql);
 if($result){
 	echo "<script>
 			alert('สมัครสมาชิกเรียบร้อย')
-			window.location='index.php';
+			window.location='select.php';
 			</script>";
 }else{
 	echo mysqli_error($conn);

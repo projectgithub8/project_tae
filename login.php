@@ -22,7 +22,7 @@
       <td colspan="2"><img src="images/login_05.gif" width="219" height="22" alt=""></td>
     </tr>
     <tr>
-      <td colspan="2"><input type="password" name="password" id="password" style="width:219px;height:36px;"></td>
+      <td colspan="2"><input type="password" name="password" id="password" required autofocus style="width:219px;height:36px;"></td>
     </tr>
     <tr>
       <td colspan="2"><img src="images/login_07.gif" width="219" height="54" alt=""></td>

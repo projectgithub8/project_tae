@@ -1,7 +1,7 @@
 <?php
 	require 'conn.php';
     $search = isset($_GET['search']) ? $_GET['search']: '';
-	$query = mysqli_query($conn,"SELECT COUNT(User_name) FROM register WHERE User_username LIKE '%$search%'");
+	$query = mysqli_query($conn,"SELECT * FROM register WHERE User_username LIKE '%$search%'");
 	$row = mysqli_fetch_row($query);
 
 	$rows = $row[0];
@@ -80,14 +80,14 @@ $paginationCtrls .= ' &nbsp; &nbsp; <a href="'.$_SERVER['PHP_SELF'].'?pn='.$next
 				<div class = "col-lg-2">
 				</div>
 				<div class = "col-lg-8">
-				<table width = '1270px' height = '40px' class="table">
+				<table width = '3000px' height = '40px' class="table">
 				<tr><td></td>
 				<td width = '1020px'></td>
-				<td width = '600px'>
+				<td width = '400px'>
 				<form method = "get" id = "form" enctype = "multipart/form-data">
 					<strong style="font-size : 4">ค้นหาข้อมูล</strong>
                     <input type = "text" name = "search" placeholder = "&nbsp&nbsp กรุณาใส่ชื่อที่ต้องการค้นหา" size = "30"/>
-					<input type = "submit" value = "ค้นหา" class = "btn btn-primary"/><BR><BR>
+					<input type = "submit" value = "ค้นหา" class = "btn btn-primary"/><BR>
 				</form>
 				</td></tr>
 				<font size="4"><center><b><u>ตารางแสดงข้อมูลอาจารย์</b></u></center></font>
@@ -111,13 +111,13 @@ $paginationCtrls .= ' &nbsp; &nbsp; <a href="'.$_SERVER['PHP_SELF'].'?pn='.$next
 								while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 							?>
 							<tr>
-								<td align = center><?php echo $i ;?></td>
-								<td align='left'><?php echo $row['User_name']; ?></td>
-								<td align='center'><?php echo $row['User_username']; ?></td>
+								<td align = center width = '50px'><?php echo $i ;?></td>
+								<td align='left' width = '180px'><?php echo $row['User_name']; ?></td>
+								<td align='center' width = '130px'><?php echo $row['User_username']; ?></td>
 								<td align='center'><?php echo $row['User_password']; ?></td>
 								<td align='center'><?php echo $row['branch_name']; ?></td>
 								<td align='center'><?php echo $row['area_name']; ?></td>
-								<td align = center><a href = "update_teacher.php?User_id=<?php echo $row['User_id'];?>"><img src = 'edit.png' width = '20px' height = '20px'></a></td>
+								<td align = center><a href = "update_from_teacher.php?User_id=<?php echo $row['User_id'];?>"><img src = 'edit.png' width = '20px' height = '20px'></a></td>
 								<td align = center><a href = "delete.php?User_id=<?php echo $row['User_id'];?>" onclick = "return confirm('คุณต้องการลบข้อมูลหรือไม่')"><img src = 'deletee.png' width = '20px' height = '20px'> </a></td>
 							</tr>
 							<?php

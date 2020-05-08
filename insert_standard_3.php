@@ -11,18 +11,18 @@ if($id=="" || empty($id)|| $std_id=="" || empty($std_id)|| $id_rate=="" || empty
 			window.location='insert_from_standard_3.php';
 			</script>";
 }
-$sql = "insert into standard_3(id,std_id,id_rate,std_name)";
-$sql .= "values('$id','$std_id','$id_rate','$std_name')";
+$sql = "insert into standard_3(id,std_id,id_rate,std_name)
+values('$id','$std_id','$id_rate','$std_name')";
 $result=mysqli_query($conn,$sql);
 if($result){
 	echo "<script>
-			alert('สมัครสมาชิกเรียบร้อย')
+			alert('เพิ่มข้อมูลเรียบร้อย')
 			window.location='select_standard_3.php';
 			</script>";
 }else{
 	echo mysqli_error($conn);
 	echo "<script>
-			alert('ไม่สามารถสมัครสมาชิกได้')
+			alert('ไม่สามารถเพิ่มข้อมูลได้')
 			</script>";
 }
 mysqli_close($conn);
